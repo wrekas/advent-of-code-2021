@@ -1,5 +1,5 @@
 const fs = require(`fs`);
 
-const lines = fs.readFileSync(`file.txt`, {encoding: `utf-8`}).split(`\n`).filter(x => x);
+const lines = fs.readFileSync(`file.txt`, {encoding: `utf-8`}).split(`\n`);
 
-lines.forEach(x => console.log(x))
+console.log(lines.filter((x, index) => parseInt(x)>parseInt(lines[index-1])).length)
